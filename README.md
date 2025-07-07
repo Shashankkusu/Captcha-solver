@@ -40,21 +40,20 @@ A Python-based CAPTCHA solver leveraging computer vision and/or deep learning to
 
 ## 📁 Repository Structure
 
+```
 Captcha-solver/
-├── data/ # Generated CAPTCHA datasets (train/test)
-├── models/ # Trained model checkpoints
+├── data/                  # Generated CAPTCHA datasets (train/test)
+├── models/                # Trained model checkpoints
 ├── src/
-│ ├── generator.py # CAPTCHA image generator
-│ ├── preprocess.py # Image preprocessing utilities
-│ ├── model.py # CNN / CNN-BiLSTM model definitions
-│ ├── train.py # Training loop & evaluation
-│ └── solve.py # Inference script
-├── requirements.txt # Python dependencies
+│   ├── generator.py       # CAPTCHA image generator
+│   ├── preprocess.py      # Image preprocessing utilities
+│   ├── model.py           # CNN / CNN-BiLSTM model definitions
+│   ├── train.py           # Training loop & evaluation
+│   └── solve.py           # Inference script
+├── examples/              # Sample CAPTCHA images for testing
+├── requirements.txt       # Python dependencies
 └── README.md
-
-yaml
-Copy
-Edit
+```
 
 ---
 
@@ -63,47 +62,69 @@ Edit
 ### Generate a dataset:
 ```bash
 python src/generator.py --count 5000 --length 5
-Train the model:
-bash
-Copy
-Edit
+```
+
+### Train the model:
+```bash
 python src/train.py \
   --data-dir data/ \
   --epochs 100 \
   --batch-size 64 \
   --model models/captcha_cnn_bilstm.pth
-Solve a CAPTCHA:
-bash
-Copy
-Edit
+```
+
+### Solve a CAPTCHA:
+```bash
 python src/solve.py \
   --model models/captcha_cnn_bilstm.pth \
   --image examples/captcha01.png
-📊 Results
-Model	Accuracy (per-character)	Notes
-CNN baseline	~XX%	Single-character per slice
-CNN + BiLSTM	~YY%	Sequence prediction
+```
+
+---
+
+## 📊 Results
+
+| Model         | Accuracy (per-character) | Notes                    |
+|---------------|---------------------------|--------------------------|
+| CNN baseline  | ~XX%                      | Single-character slicing |
+| CNN + BiLSTM  | ~YY%                      | Sequence prediction      |
 
 You can improve performance with better data augmentation, model tuning, or more training epochs.
 
-🧩 Contributing
-Fork this repository and clone it.
+---
 
-Create a new branch (git checkout -b feature/my-feature).
+## 🧩 Contributing
 
-Commit your improvements (git commit -m "Add awesome feature").
+1. Fork this repository and clone it.
+2. Create a new branch:
+    ```bash
+    git checkout -b feature/my-feature
+    ```
+3. Commit your changes:
+    ```bash
+    git commit -m "Add awesome feature"
+    ```
+4. Push to your fork:
+    ```bash
+    git push origin feature/my-feature
+    ```
+5. Open a pull request — contributions are welcome!
 
-Push to your fork (git push origin feature/my-feature).
+---
 
-Open a pull request — contributions are welcome!
+## 🧭 License
 
-🧭 License
-This project is licensed under the MIT License – see the LICENSE file for details.
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
-⚠️ Disclaimer
-Intended for educational and research purposes only. Do not use to bypass CAPTCHA protections for malicious or unauthorized automation. Always comply with terms of service and applicable laws and regulations.
+---
 
-🤝 Acknowledgements
-Inspired by repositories such as jameskokoska/CAPTCHA-Solver
+## ⚠️ Disclaimer
 
-Utilizes libraries: OpenCV, NumPy, PyTorch/TensorFlow, Pillow, optionally TensorFlow Addons
+Intended for **educational and research purposes only**. Do not use to bypass CAPTCHA protections for malicious or unauthorized automation. Always comply with terms of service and applicable laws and regulations.
+
+---
+
+## 🤝 Acknowledgements
+
+- Inspired by repositories such as [jameskokoska/CAPTCHA-Solver](https://github.com/jameskokoska/CAPTCHA-Solver)
+- Utilizes libraries: OpenCV, NumPy, PyTorch/TensorFlow, Pillow, optionally TensorFlow Addons
