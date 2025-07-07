@@ -61,7 +61,7 @@ Captcha-solver/
 
 ### Generate a dataset:
 ```bash
-python src/generator.py --count 5000 --length 5
+(https://www.kaggle.com/datasets/fournierp/captcha-version-2-images)
 ```
 
 ### Train the model:
@@ -127,4 +127,4 @@ Intended for **educational and research purposes only**. Do not use to bypass CA
 ## 🤝 Acknowledgements
 
 - Inspired by repositories such as [jameskokoska/CAPTCHA-Solver](https://github.com/jameskokoska/CAPTCHA-Solver)
-- Utilizes libraries: OpenCV, NumPy, PyTorch/TensorFlow, Pillow, optionally TensorFlow Addons
+- Utilizes libraries: OpenCV, NumPy, PyTorch/TensorFlow, optionally TensorFlow Addons
